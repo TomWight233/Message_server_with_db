@@ -4,7 +4,7 @@
   "port": 5000,
   "env": {
     "APP_ENV": "PRODUCTION",
-    "POSTGRES_HOSTNAME": "tomwight-message-database",
-    "POSTGRES_PASSWORD": "@tomwight-postgres-password"
+    "DATABASE_URL": "@tom-database-url"
   }
 }
+
