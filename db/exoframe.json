@@ -1,0 +1,10 @@
+{
+  "name": "tomwight-message-database",
+  "domain": false,
+  "hostname": "tomwight-message-database",
+  "image": "postgres:12",
+  "env": {
+    "POSTGRES_PASSWORD": "@tomwight-postgres-password"
+  },
+  "volumes": ["tomwight_message_database_volume:/var/lib/postgresql/data"]
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Albums</title></head>
+    <body>
+      <h1>Albums</h1>
+
+    {% for album in albums %}
+    <ul>
+      <li>
+      <a href="/albums/{{album.id}}">{{album.title}}</a>
+          </li>
+    </ul>
+    {% endfor %} <br>
+    <a href="/artists">Go to artists</a><br>
+    <br>
+    <a href="/albums/new">Add album</a>
+    </body>
+</html>
