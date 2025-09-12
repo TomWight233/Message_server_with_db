@@ -41,56 +41,7 @@ app = Flask(__name__)
 def get_hello():
     return "Hello world!"
 
-# Below are two fairly ordinary Flask routes
 
-# @app.route("/")
-# def get_messages():
-#     # Connect to the database
-#     connection = psycopg.connect(POSTGRES_URL)
-
-#     # Run some SQL
-#     cursor = connection.cursor()
-#     cursor.execute("SELECT * FROM messages;")
-
-#     # Get the results
-#     rows = cursor.fetchall()
-
-#     # Format the results and add a form too
-#     return format_messages(rows) + generate_form()
-
-# # These two methods generate HTML lists and forms
-# def format_messages(messages):
-#     output = "<ul>"
-#     for message in messages:
-#         # We escape the message to avoid the user sending us HTML and tricking
-#         # us into rendering it.
-#         escaped_message = escape(message[0])
-#         output += f"<li>{escaped_message}</li>"
-#     output += "</ul>"
-#     return output
-
-# def generate_form():
-#     return """
-#     <form action="/" method="POST">
-#         <input type="text" name="message">
-#         <input type="submit" value="Send">
-#     </form>
-#     """
-
-# # This method receives the POST request from the form above
-# @app.route("/", methods=["POST"])
-# def post_message():
-#     # We extract the message from the request
-#     message = request.form["message"]
-
-#     # Insert a new message record into the database
-#     connection = psycopg.connect(POSTGRES_URL)
-#     cursor = connection.cursor()
-#     cursor.execute("INSERT INTO messages (message) VALUES (%s);", (message,))
-#     connection.commit()
-
-#     # And redirect to the main page
-#     return redirect(url_for("get_messages"))
 
 if __name__ == '__main__':
     # We also run the server differently depending on the environment.
