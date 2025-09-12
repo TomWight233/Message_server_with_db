@@ -83,8 +83,8 @@ jobs:
       # And deploy using our secret token
       - name: Deploy to production
         run: |
-        cd db  
-        exoframe deploy --token ${{ secrets.EXOFRAME_TOKEN }} --update
+          cd db  
+          exoframe deploy --token ${{ secrets.EXOFRAME_TOKEN }} --update
 
-        cd ../web  
-        exoframe deploy --token ${{ secrets.EXOFRAME_TOKEN }} --endpoint "https://exoframe.xf.mkrs.link" --update
+          cd ../web  
+          exoframe deploy --token ${{ secrets.EXOFRAME_TOKEN }} --endpoint "https://exoframe.xf.mkrs.link" --update
