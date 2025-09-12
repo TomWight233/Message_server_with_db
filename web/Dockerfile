@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install flask psycopg
 
 # Set the environment variable so Flask knows where the app is
 ENV FLASK_APP=app.py
