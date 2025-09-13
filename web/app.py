@@ -46,7 +46,7 @@ app = Flask(__name__)
 
 @app.route('/hello')
 def get_hello():
-    return "Hello, world!!"
+    return "Hello, world!"
 
 @app.route("/")
 def get_messages():
