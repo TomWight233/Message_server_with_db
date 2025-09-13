@@ -39,9 +39,7 @@ def clear_database(url):
     connection.commit()
 
 
-# We run the two functions above
-POSTGRES_URL = get_database_url()
-setup_database(POSTGRES_URL)
+
 
 
 
