@@ -3,6 +3,7 @@ import os
 import psycopg
 from flask import Flask, request, redirect, url_for, render_template
 from markupsafe import escape
+import time
 
 # We're going to write a function that constructs an URL for the database
 def get_database_url():
@@ -41,6 +42,24 @@ def clear_database(url):
 # We run the two functions above
 POSTGRES_URL = get_database_url()
 setup_database(POSTGRES_URL)
+
+
+
+
+MAX_RETRIES = 10
+
+for i in range(MAX_RETRIES):
+    try:
+        POSTGRES_URL = get_database_url()
+        setup_database(POSTGRES_URL)
+        print("✅ Database setup complete.")
+        break
+    except Exception as e:
+        print(f"❌ Attempt {i+1}: Could not connect to DB: {e}")
+        time.sleep(5)
+else:
+    raise RuntimeError("❌ Database not reachable after multiple attempts")
+
 
 app = Flask(__name__)
 
