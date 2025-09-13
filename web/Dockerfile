@@ -27,4 +27,5 @@ RUN pip install -r requirements.txt
 
 # So we're going to tell Docker here that when we _do_ want to run it, this is
 # what it should run:
+EXPOSE 5000
 CMD ["python", "app.py"]
