@@ -3,7 +3,7 @@
   "domain": "tomwight-messages.xf.mkrs.link",
   "port": 5000,
   "env": {
-  "APP_ENV": "PRODUCTION",
-  "DATABASE_URL": "postgresql://tomwight:${@tomwight-postgres-password}@tomwight-message-database:5432/mydatabase"
-}
+    "APP_ENV": "PRODUCTION",
+    "DATABASE_URL": "@tomwight-database-url"
+  }
 }
